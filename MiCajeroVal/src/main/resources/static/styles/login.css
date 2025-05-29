@@ -1,0 +1,102 @@
+/* login.css */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #1a1a1a; /* fondo gris claro */
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #ff69b4; /* rosa fuerte */
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.login-container {
+    background-color: #000; /* fondo negro */
+    border: 2px solid #ffb6c1; /* rosa claro */
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4); /* sombra rosada */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    color: #ff69b4;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff69b4; /* fucsia */
+    border-radius: 5px;
+    background-color: #fff0f5; /* rosado muy claro */
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button[type="submit"] {
+    background-color: #ff1493; /* fucsia intenso */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff69b4; /* rosa fuerte */
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    color: #ff69b4;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff3366; /* rojo rosado */
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}

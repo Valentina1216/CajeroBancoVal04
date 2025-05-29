@@ -1,0 +1,245 @@
+/* ============================================
+   ESTILOS GLOBALES
+============================================ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    background-color: #1a1a1a;               
+    color: #f2f2f2;                          
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+    /* Fondo de bolitas claras */
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px),
+      radial-gradient(circle, rgba(200,200,200,0.1) 1px, transparent 1px);
+    background-size: 40px 40px, 20px 20px;
+    background-position: 0 0, 10px 10px;
+    position: relative;
+}
+
+/* ============================================
+   ENCABEZADOS
+============================================ */
+h1, h2 {
+    color: #ff66b2;   
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+============================================ */
+.admin-container {
+    background-color: #000000;       
+    border: 3px dashed #ff99cc;      
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Moñitos en esquinas del contenedor */
+.admin-container::before,
+.admin-container::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('/img/hello-kitty-bow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+.admin-container::before {
+    top: -20px;
+    left: -20px;
+}
+.admin-container::after {
+    bottom: -20px;
+    right: -20px;
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   MENÚ DE OPCIONES
+============================================ */
+.admin-menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    z-index: 2;
+}
+
+.admin-menu li {
+    margin: 0;
+}
+
+.admin-menu a {
+    display: block;
+    background-color: #2b2b2b;    
+    color: #ff99cc;               
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px dashed #ff66b2;  
+    position: relative;
+}
+.admin-menu a::before {
+    content: "🐱";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 24px;
+}
+.admin-menu a:hover {
+    background-color: #ff66b2;
+    color: #1a1a1a;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(255, 102, 178, 0.3);
+}
+
+/* ============================================
+   FORMULARIOS Y CAMPOS
+============================================ */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ff99cc;  
+}
+
+/* Inputs con estilo “soft” */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #666666;   
+    border-radius: 10px;
+    background-color: #333333;   
+    font-size: 16px;
+    color: #f2f2f2;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff66b2;
+    background-color: #3d3d3d;
+    outline: none;
+}
+
+/* ============================================
+   BOTONES
+============================================ */
+button[type="submit"],
+.admin-btn {
+    background-color: #ff66b2;
+    color: #1a1a1a;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+button[type="submit"]:hover,
+.admin-btn:hover {
+    background-color: #ff3385;
+    transform: translateY(-2px);
+}
+
+/* Botón “Volver” */
+.back-btn {
+    background-color: transparent;
+    color: #ff66b2;
+    border: 2px dashed #ff99cc;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    background-color: #ff99cc;
+    color: #1a1a1a;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   MENSAJES DE ESTADO
+============================================ */
+.message {
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.success {
+    background-color: #e6ffe6;
+    color: #006600;
+    border: 1px solid #66cc66;
+}
+
+.error {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border: 1px solid #ff6666;
+}
+
+/* ============================================
+   ICONO PERSONALIZADO EN SELECT
+============================================ */
+select {
+    appearance: none;
+    background-image:
+      url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff66b2'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
